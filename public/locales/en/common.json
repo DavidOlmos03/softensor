@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "team": "Team",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Software Innovation",
+    "subtitle": "We transform ideas into technological solutions",
+    "description": "We are a team of physicists, mathematicians, engineers and statisticians developing full stack software with AI, ML and Cloud.",
+    "cta": "Learn more"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete solutions for your business",
+    "fullstack": {
+      "title": "Full Stack Development",
+      "description": "Complete web and mobile applications using the latest technologies and best practices."
+    },
+    "cloud": {
+      "title": "Cloud Services",
+      "description": "Scalable and secure cloud infrastructure for your application."
+    },
+    "ai": {
+      "title": "AI & Machine Learning",
+      "description": "Intelligent solutions that learn and adapt to your needs."
+    },
+    "data": {
+      "title": "Data Analysis",
+      "description": "We transform data into actionable insights for your business."
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Software development experts",
+    "roles": {
+      "physicist": "Physicist",
+      "mathematician": "Mathematician",
+      "engineer": "Systems Engineer",
+      "statistician": "Statistician"
+    }
+  },
+  "values": {
+    "title": "Our Values",
+    "smallBusiness": {
+      "title": "Support for Small Businesses",
+      "description": "We help entrepreneurs and small businesses grow with accessible technology."
+    },
+    "development": {
+      "title": "Comprehensive Development",
+      "description": "Committed to the academic and professional growth of people and organizations."
+    },
+    "innovation": {
+      "title": "Continuous Innovation",
+      "description": "We apply the latest technologies and methodologies to deliver cutting-edge solutions."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Let's talk about your project",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "slogan": "Science-driven innovation"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  }
+}

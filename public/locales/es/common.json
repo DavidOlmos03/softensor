@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "team": "Equipo",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Innovación en Software",
+    "subtitle": "Transformamos ideas en soluciones tecnológicas",
+    "description": "Somos un equipo de físicos, matemáticos, ingenieros y estadísticos desarrollando software full stack con IA, ML y Cloud.",
+    "cta": "Conoce más"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones completas para tu negocio",
+    "fullstack": {
+      "title": "Desarrollo Full Stack",
+      "description": "Aplicaciones web y móviles completas utilizando las últimas tecnologías y mejores prácticas."
+    },
+    "cloud": {
+      "title": "Servicios Cloud",
+      "description": "Infraestructura escalable y segura en la nube para tu aplicación."
+    },
+    "ai": {
+      "title": "IA y Machine Learning",
+      "description": "Soluciones inteligentes que aprenden y se adaptan a tus necesidades."
+    },
+    "data": {
+      "title": "Análisis de Datos",
+      "description": "Transformamos datos en insights accionables para tu negocio."
+    }
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Expertos en desarrollo de software",
+    "roles": {
+      "physicist": "Físico",
+      "mathematician": "Matemático",
+      "engineer": "Ingeniero de Sistemas",
+      "statistician": "Estadístico"
+    }
+  },
+  "values": {
+    "title": "Nuestros Valores",
+    "smallBusiness": {
+      "title": "Apoyo a Pequeñas Empresas",
+      "description": "Ayudamos a emprendedores y pequeñas empresas a crecer con tecnología accesible."
+    },
+    "development": {
+      "title": "Desarrollo Integral",
+      "description": "Comprometidos con el crecimiento académico y profesional de personas y organizaciones."
+    },
+    "innovation": {
+      "title": "Innovación Continua",
+      "description": "Aplicamos las últimas tecnologías y metodologías para entregar soluciones de vanguardia."
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Hablemos de tu proyecto",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "slogan": "Innovación impulsada por la ciencia"
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Oscuro"
+  }
+}
