@@ -22,6 +22,24 @@ Landing page moderna para equipo de desarrollo de software con estilo neon sunse
 
 ## 📦 Instalación
 
+### Opción 1: Docker (Recomendado) 🐳
+
+```bash
+# Desarrollo
+make dev
+# o
+docker-compose -f docker-compose.dev.yml up --build
+
+# Producción (Next.js + Nginx)
+make prod
+# o
+docker-compose -f docker-compose.yml up --build -d
+```
+
+**Ver documentación completa**: [DOCKER.md](./DOCKER.md)
+
+### Opción 2: NPM Local
+
 ```bash
 # Instalar dependencias
 npm install

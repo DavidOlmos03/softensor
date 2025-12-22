@@ -24,6 +24,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env.production.local
 
 # vercel
 .vercel
@@ -31,3 +32,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# docker
+docker-compose.override.yml
+.docker/
+
+# logs
+logs/
+*.log

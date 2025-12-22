@@ -1,0 +1,32 @@
+# Docker Compose for Development
+version: '3.8'
+
+services:
+  # Next.js Development Server
+  nextjs-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: softensor-nextjs-dev
+    restart: unless-stopped
+    ports:
+      - "${DEV_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    env_file:
+      - .env.development
+    volumes:
+      # Mount source code for hot reload
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - softensor-dev-network
+    stdin_open: true
+    tty: true
+    command: npm run dev
+
+networks:
+  softensor-dev-network:
+    driver: bridge
