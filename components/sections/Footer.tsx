@@ -6,11 +6,11 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-sunset-deep border-t-2 border-sunset-light py-12 md:py-16">
+    <footer className="bg-transparent border-t-2 border-sunset-light/70 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center space-y-6">
           {/* Logo */}
-          <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-neon-gradient">
+          <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-neon-gradient text-neon-contrast">
             Softensor
           </h3>
 

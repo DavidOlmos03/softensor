@@ -24,14 +24,14 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       <h2
         className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-4 ${
           neonEffect
-            ? 'text-transparent bg-clip-text bg-neon-gradient animate-glow'
+            ? 'text-transparent bg-clip-text bg-neon-gradient animate-glow text-neon-contrast'
             : 'text-gray-900 dark:text-white'
         }`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
+        <p className="force-light-text text-lg md:text-xl lg:text-2xl text-black/80 dark:text-gray-300 max-w-3xl mx-auto px-4">
           {subtitle}
         </p>
       )}

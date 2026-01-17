@@ -2,7 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Section from '../common/Section';
 import SectionTitle from '../common/SectionTitle';
-import Card from '../common/Card';
+import Carousel from '../common/Carousel';
+import ExpandableCards from '@/components/ui/expandable-cards';
+import { SpotlightCard } from '@/components/ui/spotlightcard';
 
 const Services: React.FC = () => {
   const { t } = useTranslation('common');
@@ -10,25 +12,50 @@ const Services: React.FC = () => {
   const services = [
     {
       key: 'fullstack',
-      icon: '💻',
-      color: 'neon-purple',
+      icon: (
+        '💻'
+      ),
+      textClass: 'text-neon-purple',
     },
     {
       key: 'cloud',
-      icon: '☁️',
-      color: 'neon-blue',
+      icon: (
+        '☁️'
+      ),
+      textClass: 'text-neon-blue',
     },
     {
       key: 'ai',
-      icon: '🤖',
-      color: 'neon-pink',
+      icon: (
+        '🤖'
+      ),
+      textClass: 'text-neon-pink',
     },
     {
       key: 'data',
-      icon: '📊',
-      color: 'neon-cyan',
+      icon: (
+        '📊'
+      ),
+      textClass: 'text-neon-cyan',
     },
   ];
+
+  const renderServiceCard = (service: typeof services[number]) => (
+    <SpotlightCard
+      className="keep-light-text h-full bg-sunset-dark/70 border border-neon-purple/60 text-white"
+      spotlightColor="6, 255, 240"
+    >
+      <div className="text-center space-y-4 py-4">
+        <div className="text-5xl md:text-6xl lg:text-7xl mb-6">{service.icon}</div>
+        <h3 className={`text-xl md:text-2xl font-bold ${service.textClass} mb-3`}>
+          {t(`services.${service.key}.title`)}
+        </h3>
+        <p className="text-sm md:text-base text-gray-300 leading-relaxed px-2">
+          {t(`services.${service.key}.description`)}
+        </p>
+      </div>
+    </SpotlightCard>
+  );
 
   return (
     <Section id="services" background="dark">
@@ -37,20 +64,27 @@ const Services: React.FC = () => {
         subtitle={t('services.subtitle')}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
-        {services.map((service) => (
-          <Card key={service.key} variant="neon">
-            <div className="text-center space-y-4 py-4">
-              <div className="text-5xl md:text-6xl lg:text-7xl mb-6">{service.icon}</div>
-              <h3 className={`text-xl md:text-2xl font-bold text-${service.color} mb-3`}>
-                {t(`services.${service.key}.title`)}
-              </h3>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed px-2">
-                {t(`services.${service.key}.description`)}
-              </p>
+      <div className="md:hidden">
+        <Carousel
+          options={{ align: 'start', loop: true, dragFree: true }}
+          slideClassName="md:flex-[0_0_48%] lg:flex-[0_0_24%]"
+        >
+          {services.map((service) => (
+            <div key={service.key} className="h-full">
+              {renderServiceCard(service)}
             </div>
-          </Card>
-        ))}
+          ))}
+        </Carousel>
+      </div>
+
+      <div className="hidden md:block h-[320px] md:h-[360px] w-full select-none">
+        <ExpandableCards
+          cards={services.map((service, index) => ({
+            id: index + 1,
+            content: renderServiceCard(service),
+          }))}
+          defaultExpanded={2}
+        />
       </div>
 
       {/* Technologies Section */}
@@ -66,7 +100,7 @@ const Services: React.FC = () => {
           ].map((tech) => (
             <span
               key={tech}
-              className="px-4 md:px-5 py-2 md:py-3 bg-sunset-medium border border-neon-purple rounded-full text-sm md:text-base text-gray-300 hover:border-neon-cyan hover:text-neon-cyan transition-all"
+              className="px-4 md:px-5 py-2 md:py-3 bg-sunset-medium/70 border border-neon-purple rounded-full text-sm md:text-base text-gray-300 hover:border-neon-cyan hover:text-neon-cyan transition-all"
             >
               {tech}
             </span>

@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 md:px-5 py-3 md:py-4 bg-sunset-deep border-2 border-neon-purple rounded-lg focus:border-neon-cyan focus:outline-none text-white placeholder-gray-400 text-base"
+                className="w-full px-4 md:px-5 py-3 md:py-4 bg-sunset-deep/70 border-2 border-neon-purple rounded-lg focus:border-neon-cyan focus:outline-none text-white placeholder-gray-400 text-base"
                 placeholder="your@email.com"
               />
             </div>
@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 md:px-5 py-3 md:py-4 bg-sunset-deep border-2 border-neon-purple rounded-lg focus:border-neon-cyan focus:outline-none text-white placeholder-gray-400 resize-none text-base"
+                className="w-full px-4 md:px-5 py-3 md:py-4 bg-sunset-deep/70 border-2 border-neon-purple rounded-lg focus:border-neon-cyan focus:outline-none text-white placeholder-gray-400 resize-none text-base"
                 placeholder={t('contact.message')}
               />
             </div>
@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-neon-cyan transition-colors text-4xl md:text-5xl"
+              className="text-gray-700 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors text-4xl md:text-5xl"
               aria-label="GitHub"
             >
               🔗
@@ -107,14 +107,14 @@ const Contact: React.FC = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-neon-cyan transition-colors text-4xl md:text-5xl"
+              className="text-gray-700 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors text-4xl md:text-5xl"
               aria-label="LinkedIn"
             >
               💼
             </a>
             <a
               href="mailto:info@softensor.com"
-              className="text-gray-300 hover:text-neon-cyan transition-colors text-4xl md:text-5xl"
+              className="text-gray-700 dark:text-gray-300 hover:text-neon-purple dark:hover:text-neon-cyan transition-colors text-4xl md:text-5xl"
               aria-label="Email"
             >
               📧

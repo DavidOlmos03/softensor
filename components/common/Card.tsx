@@ -16,9 +16,9 @@ const Card: React.FC<CardProps> = ({
   const baseStyles = 'rounded-xl p-6 md:p-8 transition-all duration-300';
 
   const variantStyles = {
-    default: 'bg-white dark:bg-sunset-medium border border-gray-200 dark:border-sunset-light',
-    neon: 'bg-sunset-dark border-2 border-neon-cyan shadow-neon-cyan',
-    gradient: 'bg-gradient-to-br from-sunset-medium to-sunset-dark border border-neon-purple',
+    default: 'bg-white/80 dark:bg-sunset-medium/70 border border-gray-200/60 dark:border-sunset-light/70',
+    neon: 'bg-sunset-dark/70 border-2 border-neon-cyan shadow-neon-cyan',
+    gradient: 'bg-gradient-to-br from-sunset-medium/80 to-sunset-dark/80 border border-neon-purple',
   };
 
   const hoverStyles = hover

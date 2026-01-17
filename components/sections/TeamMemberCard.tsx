@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Card from '../common/Card';
 import { TeamMember } from '@/types/team';
+import { SpotlightCard } from '@/components/ui/spotlightcard';
 
 interface TeamMemberCardProps {
   member: TeamMember;
@@ -11,10 +11,10 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
   const { t } = useTranslation('common');
 
   const roleColors = {
-    physicist: 'neon-blue',
-    mathematician: 'neon-purple',
-    engineer: 'neon-pink',
-    statistician: 'neon-cyan',
+    physicist: 'text-neon-blue',
+    mathematician: 'text-neon-purple',
+    engineer: 'text-neon-pink',
+    statistician: 'text-neon-cyan',
   };
 
   const roleIcons = {
@@ -25,7 +25,10 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
   };
 
   return (
-    <Card variant="gradient">
+    <SpotlightCard
+      className="keep-light-text h-full bg-sunset-medium/70 border border-neon-purple/60 text-white"
+      spotlightColor="6, 255, 240"
+    >
       <div className="text-center space-y-5 py-2">
         {/* Avatar */}
         <div className="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full bg-gradient-to-br from-neon-purple to-neon-pink flex items-center justify-center text-4xl md:text-5xl mb-2">
@@ -38,7 +41,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
         </h3>
 
         {/* Role */}
-        <p className={`text-sm md:text-base text-${roleColors[member.role]} font-semibold px-2`}>
+        <p className={`text-sm md:text-base ${roleColors[member.role]} font-semibold px-2`}>
           {t(`team.roles.${member.role}`)}
         </p>
 
@@ -54,7 +57,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           ))}
         </div>
       </div>
-    </Card>
+    </SpotlightCard>
   );
 };
 

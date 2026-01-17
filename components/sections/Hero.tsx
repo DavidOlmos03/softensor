@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       <div className="w-full max-w-6xl mx-auto px-4">
         <div className="text-center space-y-8 md:space-y-12">
           {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-transparent bg-clip-text bg-neon-gradient animate-glow px-4">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-transparent bg-clip-text bg-neon-gradient animate-glow text-neon-contrast px-4">
             {t('hero.title')}
           </h1>
 
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-6 md:px-8">
+          <p className="force-light-text text-base md:text-lg lg:text-xl text-black/80 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed px-6 md:px-8">
             {t('hero.description')}
           </p>
 

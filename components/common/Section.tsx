@@ -14,9 +14,9 @@ const Section: React.FC<SectionProps> = ({
   background = 'default',
 }) => {
   const backgroundStyles = {
-    default: 'bg-white dark:bg-sunset-deep',
-    gradient: 'bg-gradient-to-b from-sunset-deep via-sunset-dark to-sunset-medium',
-    dark: 'bg-sunset-dark',
+    default: 'bg-transparent',
+    gradient: 'bg-transparent',
+    dark: 'bg-transparent',
   };
 
   return (

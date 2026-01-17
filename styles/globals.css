@@ -27,10 +27,10 @@
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FF006E, 0 0 40px #FF006E;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.35), 0 0 10px rgba(255, 0, 110, 0.5);
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #8338EC, 0 0 40px #8338EC, 0 0 50px #8338EC;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 14px rgba(131, 56, 236, 0.55);
   }
 }
 
@@ -98,3 +98,23 @@ body {
   background-image: linear-gradient(180deg, #1A0B2E 0%, #16213E 50%, #2D1B69 100%);
 }
 
+/* Improve neon gradient text legibility on varied backgrounds */
+.text-neon-contrast {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3), 0 0 10px rgba(131, 56, 236, 0.35);
+  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.3);
+}
+
+/* Make white text darker in light mode unless explicitly preserved */
+.light .text-white:not(.keep-light-text) {
+  color: #0b0b0b;
+}
+
+.light .keep-light-text .text-white,
+.light .keep-light-text.text-white {
+  color: #ffffff;
+}
+
+/* Force readable light-mode text when theme toggles are class-based. */
+.light .force-light-text {
+  color: rgba(0, 0, 0, 0.8) !important;
+}

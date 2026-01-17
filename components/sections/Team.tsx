@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import Section from '../common/Section';
 import SectionTitle from '../common/SectionTitle';
 import TeamMemberCard from './TeamMemberCard';
+import Carousel from '../common/Carousel';
+import ExpandableCards from '@/components/ui/expandable-cards';
 import { TeamMember } from '@/types/team';
 
 const Team: React.FC = () => {
@@ -43,10 +45,31 @@ const Team: React.FC = () => {
         subtitle={t('team.subtitle')}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
-        {teamMembers.map((member) => (
-          <TeamMemberCard key={member.id} member={member} />
-        ))}
+      <div className="md:hidden">
+        <Carousel
+          options={{ align: 'start', loop: true, dragFree: true }}
+          slideClassName="md:flex-[0_0_48%] lg:flex-[0_0_24%]"
+        >
+          {teamMembers.map((member) => (
+            <div key={member.id} className="h-full">
+              <TeamMemberCard member={member} />
+            </div>
+          ))}
+        </Carousel>
+      </div>
+
+      <div className="hidden md:block h-[360px] md:h-[420px] w-full select-none">
+        <ExpandableCards
+          cards={teamMembers.map((member) => ({
+            id: member.id,
+            content: (
+              <div className="h-full">
+                <TeamMemberCard member={member} />
+              </div>
+            ),
+          }))}
+          defaultExpanded={2}
+        />
       </div>
 
       {/* Values Section */}
@@ -57,7 +80,7 @@ const Team: React.FC = () => {
           {['smallBusiness', 'development', 'innovation'].map((value) => (
             <div
               key={value}
-              className="text-center p-8 md:p-10 rounded-xl bg-sunset-dark/50 border border-neon-purple hover:border-neon-cyan transition-all"
+              className="text-center p-8 md:p-10 rounded-xl bg-sunset-dark/60 border border-neon-purple hover:border-neon-cyan transition-all"
             >
               <h3 className="text-xl md:text-2xl font-bold text-neon-cyan mb-4 md:mb-6 px-2">
                 {t(`values.${value}.title`)}
