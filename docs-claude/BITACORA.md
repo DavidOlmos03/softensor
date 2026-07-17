@@ -7,6 +7,75 @@ bitácora.
 
 ---
 
+# Entrada 2 — Fase 0: cierre parcial / transición de flujo
+
+Fecha: 2026-07-16. Fase: 0 — cierre parcial / transición de flujo.
+Rama: develop.
+
+## Hallazgo crítico: pipeline de deploy de Vercel roto (RESUELTO el mismo día)
+- Registro histórico: el pipeline estaba roto desde el 2025-12-22
+  (commit "application with docker", único deploy a Production fallido).
+  Todos los deployments posteriores, incluidos los previews, fallaban.
+- Producción servía la versión del 2025-11-30.
+- RESUELTO (2026-07-16, mismo día del hallazgo): David mergeó el PR #3
+  ("Fix React Server Components CVE vulnerabilities", commit 7d36edc),
+  que actualiza dependencias afectadas por CVEs de React Server
+  Components. Con eso el deploy a Production volvió a verde y producción
+  quedó actualizada por primera vez desde el 2025-11-30.
+- Causa raíz de los builds fallidos: las dependencias vulnerables que el
+  pipeline de Vercel rechazaba. Inferencia fuerte a partir del nombre y
+  contenido del PR #3, NO verificada contra build logs.
+- Diagnóstico con build logs: resuelto por el PR #3; los build logs ya
+  no son necesarios para esto.
+- El fallo del preview de fase0/contacto-directo era señal del mismo
+  problema, NO un error introducido por la Fase 0.
+
+## Decisión de infraestructura (pendiente de ejecutar en reunión del fin de semana)
+- Se creará un correo de la marca. Verificar primero en Hostinger si
+  existe buzón o forwarding para softensor.com (el `info@softensor.com`
+  del código es placeholder no verificado).
+- Con ese correo se creará una cuenta de Vercel del proyecto, a la que
+  David transferirá el proyecto desde su cuenta personal.
+- Descartados: compartir credenciales personales y transferir a la
+  cuenta personal de Luis.
+
+## Nuevo flujo de ramas
+- Se crea la rama `develop` como línea de integración permanente.
+- Entre semana: ramas de fase (`faseN/...`) desde develop, aprobación en
+  local, `merge --no-ff` a develop.
+- Cada fin de semana (reunión Luis+David): PR de develop a main,
+  revisión conjunta, merge = deploy a producción.
+- La rama luis permanece congelada como archivo de referencia (decisión
+  previa sin cambios, ver Entrada 0).
+- Las ramas de fase NO se borran hasta que su contenido llegue a main.
+
+## Regla temporal de riesgo
+Mientras no haya cuenta de Vercel operativa: máximo UNA fase sin deploy
+verde acumulada en develop. Al existir la cuenta, se activarán preview
+deployments sobre develop como validación continua y esta regla se
+reemplaza.
+
+## Estado de compuerta de Fase 0
+Código aprobado por arquitecto, tsc y build local en verde, mergeado a
+develop. PENDIENTE para cierre total: deploy verde en Vercel y merge a
+main, bloqueado únicamente por la reunión del fin de semana (el
+pipeline quedó resuelto el mismo día, ver hallazgo).
+
+## Pendientes (se agregan a la lista global)
+- ~~Diagnóstico del pipeline con build logs de Vercel~~ — RESUELTO el
+  mismo día por el PR #3 (ver hallazgo arriba).
+- Ratificar en reunión el protocolo de corrección post-PR: fix desde
+  develop, merge a main apenas esté verde, sin esperar al siguiente
+  domingo.
+- Configurar previews sobre develop en la cuenta nueva.
+
+Nota (mismo día): develop ya contiene tanto la Fase 0 como el fix del
+PR #3 (verificado en el grafo de git: el merge 7c66f41 tiene ambos como
+ancestros), por lo que la regla temporal de riesgo parte de una base
+sincronizada con main.
+
+---
+
 # Entrada 1 — Fase 0: contacto directo
 
 Fecha: 2026-07-15. Fase: 0 — contacto directo. Rama: fase0/contacto-directo.
