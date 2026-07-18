@@ -7,6 +7,64 @@ bitácora.
 
 ---
 
+# Entrada 3 — Fase 1: design brief (cierre)
+
+Fecha: 2026-07-17. Fase: 1 — design brief. Rama: fase1/design-brief.
+
+## Decisiones tomadas (sesión de arquitectura)
+- 3D: DESCARTADO todo runtime 3D (Spline, Rive, three.js custom). Razones:
+  Spline ~2MB de runtime opaco para un efecto desktop-only; three.js custom
+  = días de trabajo sin evidencia de mejora de conversión B2B; Rive viola
+  la regla de framer-motion como único sistema 2D. La regla "máximo un
+  runtime 3D" queda como techo, no como cuota. Un hero que carga
+  instantáneo es mejor señal de competencia técnica que un 3D lagueando
+  en móvil de gama media.
+- Rama luis (evaluación conceptual, código verificado clonando la rama):
+  venom-beam y particles descartados (three.js / canvas+rAF persistente);
+  spotlightcard y background-paths aprobados como concepto (ya son
+  framer-motion/SVG puros); expandable-cards anotado como patrón candidato.
+  Nada se mergea de la rama (decisión previa sin cambios).
+- Herramienta de Fase 2: ratificado Claude Design. Evaluadas y descartadas
+  como herramienta principal: Replit y Manus (generan código/hosting
+  propios, incompatible con el flujo diseño→Claude Code sobre stack fijo);
+  Awwwards/Dribbble quedan solo como fuente de referencias; Aceternity/
+  uiverse descartadas (copy-paste de componentes, y Aceternity es el
+  cliché del que se busca diferenciación).
+- Dirección visual: minimalismo funcional + tipografía fuerte (suizo) +
+  capa dark tech sutil + bento grid en servicios. Descartados como
+  sistema: glassmorphism, liquid glass, claymorphism, maximalismo,
+  brutalismo, neumorphism, UI espacial.
+- Identidad: internacional neutra (mercado incluye exterior, de ahí el
+  EN). Lo colombiano queda como dato de confianza, no como tema visual.
+- Elemento distintivo: avatares ilustrados 2D interactivos (SVG +
+  framer-motion) en vez de avatar 3D. La referencia 3D evaluada
+  (portfolio davidhckh 2025: three.js+GSAP+GLSL+Lenis+Howler) se descartó
+  por costo estructural de performance. Decisión avatar vs foto vs
+  híbrido queda abierta para Fase 2.
+- Proyectos/casos: se diseña la sección con datos extensibles por array y
+  placeholder realista. Curaduría de casos reales pendiente con David
+  (candidatos: proyectos de Luis, página de divulgación científica de
+  David, y softensor.com mismo).
+
+## Qué se hizo (esta rama)
+- Creado docs-claude/DESIGN-BRIEF.md: brief aprobado por Luis, insumo
+  único para Fase 2 (Claude Design).
+- Esta entrada de bitácora.
+
+## Estado de compuerta de Fase 1
+CERRADA en decisión: brief aprobado por Luis + decisión 3D asentada
+(2026-07-17). Pendiente mecánico: merge --no-ff de esta rama a develop
+por Luis. Nota de riesgo: la regla temporal "máximo UNA fase sin deploy
+verde en develop" (Entrada 2) se refiere a fases con código; esta rama
+es solo docs y no cambia el build, se considera fuera de esa cuenta.
+
+## Pendientes (se agregan a la lista global)
+- Curaduría con David de qué proyectos mostrar en la sección confianza.
+- Decisión avatar vs foto vs híbrido (se toma en Fase 2 viendo las
+  exploraciones de Claude Design).
+- Asset SVG de los avatares (encargar / generar+vectorizar / explorar
+  con Claude Design).
+
 # Entrada 2 — Fase 0: cierre parcial / transición de flujo
 
 Fecha: 2026-07-16. Fase: 0 — cierre parcial / transición de flujo.
